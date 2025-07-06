@@ -7,6 +7,46 @@
 - During every class, follow along with sample code from the slides. All code that you should be running in Python is formatted as follows:
   
   > If code in a slide looks like this, you should be running it to generate results.
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+
+np.random.seed(613)
+x = np.arange(50)
+y = np.random.normal(0, 100, 50)
+
+fig, ax = plt.subplots(figsize=(5, 3))
+#ax.scatter(x, y, color='blue', alpha=0.5)
+#ax.bar(x, y, color='blue')
+#ax.barh(x, y, color='blue', alpha=0.5) 
+ax.hist(y, bins=30, color='blue', alpha=0.5)
+ax.set_title('Bar Chart Example')
+
+
+font1 = {'family': 'serif',
+         'color':  'blue',
+         'weight': 'normal',
+         'size': 20,  # in points
+         }
+font2 = {'family': 'sans-serif',
+         'color':  'green',
+         'weight': 'bold',
+         'size': 15,  # in points
+         }
+
+fig, ax = plt.subplots(figsize=(5, 3))
+ax.plot(x, y)
+ax.set_title('Total growth over time', fontdict=font1, loc='left')
+ax.set_xlabel('Years since start', fontdict=font2)
+ax.set_ylabel('Total growth', fontdict=font2)
+
+fig, ax = plt.subplots(figsize=(5, 3))
+ax.scatter(x, y,marker="+", color='indigo',  linestyle='--', linewidth=2)
+
+#fig.show()
+
+
 
 - When there are individual or group activities in submodules, make notes of answers and key points from discussions
 - Following each lesson with code, submit a document (either .py or a Jupyter notebook) containing the functioning code from that day's lesson, along with any written notes or comments.
